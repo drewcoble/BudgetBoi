@@ -1,20 +1,66 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      BudgetBoi
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card color="light">
+    <ion-img src="assets/images/budgetboi.jpg"></ion-img>
+    <ion-card-header>
+      <strong>BudgetBoi</strong> works best when you are logged in. Set up your incomes, bills, and categories once and they'll be stored for
+      a quicker, easier experience next time.
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block">Login</ion-button>
+      <ion-button expand="block" color="tertiary">Register</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+  
+
+
+
+  <ion-card color="primary" routerLink="../incomes" routerDirection="forward">
+    <ion-img src="assets/images/incomes-short.png"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Step 1</ion-card-subtitle>
+      <ion-card-title>Your Incomes</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card color="primary" routerLink="../bills" routerDirection="forward">
+    <ion-img src="assets/images/bills-short.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Step 2</ion-card-subtitle>
+      <ion-card-title>Your Bills</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card color="primary" routerLink="../spending" routerDirection="forward">
+    <ion-img src="assets/images/spending-short.png"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Step 3</ion-card-subtitle>
+      <ion-card-title>Your Spending</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card color="primary" routerLink="../budget" routerDirection="forward">
+    <ion-img src="assets/images/budget-short.png"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Step 4</ion-card-subtitle>
+      <ion-card-title>Your Budget!</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-title>Ad Space</ion-title>
+  </ion-toolbar>
+</ion-footer>

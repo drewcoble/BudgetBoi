@@ -1,0 +1,92 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-back-button slot="start" color="light"></ion-back-button>
+    <ion-title>
+      BudgetBoi
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card color="primary">
+    
+    <ion-card-header>
+      <ion-card-subtitle>Step 1</ion-card-subtitle>
+      <ion-card-title>Your Incomes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      This is where we determine how much money we have to budget.
+      Start with any money you want to include from last pay period, 
+      then enter the amount you received this pay period next to each of your incomes.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list lines="full" inset="true">
+
+    <ion-item>
+      <ion-label class="ion-text-wrap">Starting Amount</ion-label>
+      <ion-note slot="end">$</ion-note>
+      <ion-input slot="end" placeholder="0"></ion-input>
+    </ion-item>
+
+    <ion-item-sliding>
+        <ion-item>
+          <ion-label>Income 1</ion-label>
+          <ion-note slot="end">$</ion-note>
+          <ion-input slot="end" placeholder="1000"></ion-input>
+        </ion-item>
+        <ion-item-options>
+          <ion-item-option color="dark">
+            <ion-icon name="create"></ion-icon>
+            <ion-label>
+              Edit
+            </ion-label>
+          </ion-item-option>
+          <ion-item-option color="danger">
+            <ion-icon name="trash"></ion-icon>
+            <ion-label>
+              Delete
+            </ion-label>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>Income 2</ion-label>
+          <ion-note slot="end">$</ion-note>
+          <ion-input slot="end" placeholder="1000"></ion-input>
+        </ion-item>
+        <ion-item-options>
+          <ion-item-option color="dark">
+            <ion-icon name="create"></ion-icon>
+            <ion-label>
+              Edit
+            </ion-label>
+          </ion-item-option>
+          <ion-item-option color="danger">
+            <ion-icon name="trash"></ion-icon>
+            <ion-label>
+              Delete
+            </ion-label>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item>
+        <ion-icon name="add-circle" slot="start" color="primary"></ion-icon>
+        <ion-label>Add an income.</ion-label>
+      </ion-item>
+  </ion-list>
+  
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-title>Ad Space</ion-title>
+  </ion-toolbar>
+</ion-footer>

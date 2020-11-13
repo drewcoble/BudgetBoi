@@ -11,6 +11,22 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'incomes',
+    loadChildren: () => import('./incomes/incomes.module').then( m => m.IncomesPageModule)
+  },
+  {
+    path: 'bills',
+    loadChildren: () => import('./bills/bills.module').then( m => m.BillsPageModule)
+  },
+  {
+    path: 'spending',
+    loadChildren: () => import('./spending/spending.module').then( m => m.SpendingPageModule)
+  },
+  {
+    path: 'budget',
+    loadChildren: () => import('./budget/budget.module').then( m => m.BudgetPageModule)
+  },
 ];
 
 @NgModule({

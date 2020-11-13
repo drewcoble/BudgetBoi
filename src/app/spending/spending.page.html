@@ -1,0 +1,143 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-back-button slot="start" color="light"></ion-back-button>
+    <ion-title>
+      BudgetBoi
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-subtitle>Step 3</ion-card-subtitle>
+      <ion-card-title>Your Spending</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+
+
+  <ion-list lines="full" inset="true">
+
+
+
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>Coffee</ion-label>
+        <ion-note slot="end">$</ion-note>
+        <ion-input slot="end" placeholder="15"></ion-input>
+      </ion-item>
+
+      <ion-item-options>
+        <ion-item-option color="dark">
+          <ion-icon name="create"></ion-icon>
+          <ion-label>
+            Edit
+          </ion-label>
+        </ion-item-option>
+        <ion-item-option color="danger">
+          <ion-icon name="trash"></ion-icon>
+          <ion-label>
+            Delete
+          </ion-label>
+        </ion-item-option>
+
+      </ion-item-options>
+    </ion-item-sliding>
+
+
+
+
+
+    <!-- start of fake bills to make it look real -->
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>Clothing</ion-label>
+        <ion-note slot="end">$</ion-note>
+        <ion-input slot="end" placeholder="20"></ion-input>
+      </ion-item>
+
+      <ion-item-options>
+        <ion-item-option color="dark">
+          <ion-icon name="create"></ion-icon>
+          <ion-label>
+            Edit
+          </ion-label>
+        </ion-item-option>
+        <ion-item-option color="danger">
+          <ion-icon name="trash"></ion-icon>
+          <ion-label>
+            Delete
+          </ion-label>
+        </ion-item-option>
+
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>Groceries</ion-label>
+        <ion-note slot="end">$</ion-note>
+        <ion-input slot="end" placeholder="100"></ion-input>
+      </ion-item>
+
+      <ion-item-options>
+        <ion-item-option color="dark">
+          <ion-icon name="create"></ion-icon>
+          <ion-label>
+            Edit
+          </ion-label>
+        </ion-item-option>
+        <ion-item-option color="danger">
+          <ion-icon name="trash"></ion-icon>
+          <ion-label>
+            Delete
+          </ion-label>
+        </ion-item-option>
+
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>Date Night</ion-label>
+        <ion-note slot="end">$</ion-note>
+        <ion-input slot="end" placeholder="40"></ion-input>
+      </ion-item>
+
+      <ion-item-options>
+        <ion-item-option color="dark">
+          <ion-icon name="create"></ion-icon>
+          <ion-label>
+            Edit
+          </ion-label>
+        </ion-item-option>
+        <ion-item-option color="danger">
+          <ion-icon name="trash"></ion-icon>
+          <ion-label>
+            Delete
+          </ion-label>
+        </ion-item-option>
+
+      </ion-item-options>
+    </ion-item-sliding>
+
+
+
+
+    <!-- end of fake bills -->
+
+    <ion-item>
+      <ion-icon name="add-circle" slot="start" color="primary"></ion-icon>
+      <ion-label>Add a spending category.</ion-label>
+    </ion-item>
+
+
+  </ion-list>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-title>Ad Space</ion-title>
+  </ion-toolbar>
+</ion-footer>
