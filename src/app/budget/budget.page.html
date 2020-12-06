@@ -9,30 +9,80 @@
 
 <ion-content>
 
+  <!-- Card to display Budget Breakdown -->
   <ion-card color="primary">
     <ion-card-header>
       <ion-card-title>Budget Breakdown</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p><strong>Margin:</strong> $0</p>
+      <h1><strong>Margin:</strong> ${{margin}}</h1>
+      <h1><strong>Cash:</strong> ${{cash}}</h1>
+
+      <br>
+      <h2><strong>Incomes:</strong> ${{incomesTotal}}</h2>
+      <h2><strong>Bills:</strong> ${{billsTotal}}</h2>
+      <h2><strong>Spending:</strong> ${{spendingTotal}}</h2>
     </ion-card-content>
   </ion-card>
+  <!-- End of Budget Breakdown -->
 
+  <!-- Card to display Incomes details -->
   <ion-card color="light">
     <ion-card-header>
       <ion-card-title>
         Your Incomes
       </ion-card-title>
       <ion-card-subtitle>
-        Total: $2200
+        Total: ${{incomesTotal}}
       </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content color="medium">
-      <p><strong>Starting Amount:</strong> $0</p>
-      <p><strong>Income 1:</strong> $1000</p>
-      <p><strong>Income 2:</strong> $1200</p>
+      <p><strong>Starting Amount:</strong> ${{startAmount}}</p>
+
+      <p *ngFor='let income of incomesArray'>
+        <strong>{{income.name}}</strong> ${{income.amount}}
+      </p>
+
+      <p><strong>Other Income:</strong> ${{otherIncomesTotal}}</p>
     </ion-card-content>
   </ion-card>
+  <!-- End of Incomes details -->
+
+  <!-- Card to display Bills details -->
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>
+        Your Bills
+      </ion-card-title>
+      <ion-card-subtitle>
+        Total: ${{billsTotal}}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content color="medium">
+      <p *ngFor='let bill of billsArray'>
+        <strong>{{bill.name}}</strong> ${{bill.amount}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <!-- End of Bills details -->
+
+  <!-- Card to display Spending details -->
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>
+        Your Spending
+      </ion-card-title>
+      <ion-card-subtitle>
+        Total: ${{spendingTotal}}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content color="medium">
+      <p *ngFor='let category of spendingArray'>
+        <strong>{{category.name}}</strong> ${{category.amount}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <!-- End of Spending details -->
 
 
 
@@ -41,8 +91,8 @@
 </ion-content>
 
 
-<ion-footer>
+<!-- <ion-footer>
   <ion-toolbar color="light">
     <ion-title>Ad Space</ion-title>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->

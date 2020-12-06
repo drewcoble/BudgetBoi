@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,18 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// styles for the global Alert
+.alert-class {
+  --background: var(--ion-color-tertiary);
+}
+
+// styles for the due date badge
+.badge-due-date {
+  width: 16px;
+  margin-right: 10px;
+  // margin-left: -8px;
+  --padding-start: auto;
+  --padding-end: auto;
+  border-radius: 6px;
+}

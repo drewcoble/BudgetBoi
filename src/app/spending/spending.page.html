@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border" [translucent]="true">
   <ion-toolbar color="primary">
     <ion-back-button slot="start" color="light"></ion-back-button>
     <ion-title>
@@ -9,34 +9,56 @@
 
 <ion-content class="ion-padding">
 
-  <ion-card color="primary">
+  <ion-card button detail='false' color="primary" (click)='showHideCardContent()'>
     <ion-card-header>
       <ion-card-subtitle>Step 3</ion-card-subtitle>
       <ion-card-title>Your Spending</ion-card-title>
     </ion-card-header>
+    <ion-card-content *ngIf='showCardContent'>
+      <p>Details & instructions about the spending categories page</p>
+      <br>
+      <p><strong>Swipe left</strong> on a spending category to edit or delete.</p>
+      <br>
+      <p>Click to close instructions.</p>
+    </ion-card-content>
   </ion-card>
 
 
 
-  <ion-list lines="full" inset="true">
+  <ion-list lines="full" inset="false">
 
+    <ion-item *ngIf='categories$'>
+      <ion-label  class='ion-text-wrap'>Cash?</ion-label>
+      <ion-label class='ion-text-wrap'>Name</ion-label>
+      <ion-label class='ion-text-wrap'>Amount</ion-label>
+    </ion-item>
 
+    <ion-item-sliding *ngFor='let category of categories$ | async; index as i;'>
+      <ion-item class='category-item'>
 
-    <ion-item-sliding>
-      <ion-item>
-        <ion-label>Coffee</ion-label>
-        <ion-note slot="end">$</ion-note>
-        <ion-input slot="end" placeholder="15"></ion-input>
+        <ion-checkbox
+          [(ngModel)]="values[i].isChecked"
+          style='margin-right: 10px;'
+          color="primary">
+        </ion-checkbox>
+
+        <ion-label class='ion-text-wrap category-item-name'>{{ category.name }}</ion-label>
+
+        <ion-label class='dollar-label' color='light' >$</ion-label>
+
+        <ion-input class='category-item-input' type='number' style='margin-left: 10px;' [(ngModel)]='values[i].amount'></ion-input>
+
       </ion-item>
 
       <ion-item-options>
-        <ion-item-option color="dark">
+        <ion-item-option color="dark" (click)='editCategory(category.id, category)'>
           <ion-icon name="create"></ion-icon>
           <ion-label>
             Edit
           </ion-label>
         </ion-item-option>
-        <ion-item-option color="danger">
+        
+        <ion-item-option color="danger" (click)='deleteCategory(category.id, category)'>
           <ion-icon name="trash"></ion-icon>
           <ion-label>
             Delete
@@ -51,7 +73,9 @@
 
 
     <!-- start of fake bills to make it look real -->
-    <ion-item-sliding>
+
+
+    <!-- <ion-item-sliding>
       <ion-item>
         <ion-label>Clothing</ion-label>
         <ion-note slot="end">$</ion-note>
@@ -119,14 +143,14 @@
         </ion-item-option>
 
       </ion-item-options>
-    </ion-item-sliding>
+    </ion-item-sliding> -->
 
 
 
 
     <!-- end of fake bills -->
 
-    <ion-item>
+    <ion-item button detail='false' (click)='addCategory()'>
       <ion-icon name="add-circle" slot="start" color="primary"></ion-icon>
       <ion-label>Add a spending category.</ion-label>
     </ion-item>
@@ -136,8 +160,8 @@
 </ion-content>
 
 
-<ion-footer>
+<!-- <ion-footer class="ion-no-border">
   <ion-toolbar color="light">
     <ion-title>Ad Space</ion-title>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->

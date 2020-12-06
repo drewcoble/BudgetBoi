@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border" [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title>
       BudgetBoi
@@ -6,24 +6,44 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" [fullscreen]=true>
 
   <ion-card color="light">
     <ion-img src="assets/images/budgetboi.jpg"></ion-img>
-    <ion-card-header>
-      <strong>BudgetBoi</strong> works best when you are logged in. Set up your incomes, bills, and categories once and they'll be stored for
-      a quicker, easier experience next time.
-    </ion-card-header>
-    <ion-card-content>
-      <ion-button expand="block">Login</ion-button>
-      <ion-button expand="block" color="tertiary">Register</ion-button>
-    </ion-card-content>
+    <div *ngIf='!fireService.isUser'>
+      <ion-card-header>
+        <strong>BudgetBoi</strong> works best when you are signed in. Set up your incomes, bills, and categories once and they'll be securely stored for a quicker, easier experience in the future.
+      </ion-card-header>
+      <ion-card-content>
+        <ion-chip color='dark' (click)="signIn()">
+          <ion-label>Sign In</ion-label>
+        </ion-chip>
+        <ion-chip color='dark' (click)="register()">
+          <ion-label>Register</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </div>
 
+    <div *ngIf='fireService.isUser'>
+      <ion-card-header *ngIf='true'>
+        Welcome back, {{ fireService.user.fName }}.
+      </ion-card-header>
+      <ion-card-content *ngIf='true'>
+        <ion-chip color='dark'>
+          <ion-icon color='tertiary' name="person-circle-sharp"></ion-icon>
+          <ion-label>User</ion-label>
+        </ion-chip>
+        <ion-chip color='dark' (click)="signOut()">
+          <ion-label>Sign Out</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </div>
   </ion-card>
   
 
-
-
+<!-- Only show the links to the other pages if there is a user -->
+<div *ngIf='fireService.isUser'>
+  <!-- cards linked to the different budget pages -->
   <ion-card color="primary" routerLink="../incomes" routerDirection="forward">
     <ion-img src="assets/images/incomes-short.png"></ion-img>
     <ion-card-header>
@@ -55,12 +75,12 @@
       <ion-card-title>Your Budget!</ion-card-title>
     </ion-card-header>
   </ion-card>
-
+</div>
 </ion-content>
 
 
-<ion-footer>
+<!-- <ion-footer class="ion-no-border">
   <ion-toolbar color="light">
     <ion-title>Ad Space</ion-title>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->
